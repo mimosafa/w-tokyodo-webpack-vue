@@ -1,7 +1,9 @@
 import './index.scss';
+import Vue from 'vue';
 
-const app = document.getElementById('app');
-const h = document.createElement('h1');
-
-h.textContent = 'Hello World!';
-app.appendChild(h);
+const app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello World!'
+  }
+});
