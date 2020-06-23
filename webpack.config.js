@@ -12,7 +12,9 @@ module.exports = {
     path: dist
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ],
   devServer: {
     open: true,
