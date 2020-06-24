@@ -1,9 +1,2 @@
-// @import "css/core/variable/color"; // <- included @webpack.config.js
-
-body {
-  background-color: #eee;
-}
-
-address {
-  color: $_color-red;
-}
+@import "~reset-css/sass/reset";
+@import "css/index";

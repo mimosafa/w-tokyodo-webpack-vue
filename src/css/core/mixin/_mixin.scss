@@ -1,3 +1,13 @@
-@mixin text-red {
-  color: $_color-red;
+// Media queries
+// - Phone
+@mixin phone {
+  @media (max-width: 896px) {
+    @content;
+  }
+}
+// - Desktop
+@mixin desktop {
+  @media (min-width: 897px) {
+    @content;
+  }
 }
