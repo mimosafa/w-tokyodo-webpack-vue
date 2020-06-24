@@ -4,7 +4,12 @@
       <h1 class="title">Hello World!</h1>
     </header>
     <article>
-      <p>{{ paragraph }}</p>
+      <router-view></router-view>
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/foo">Foo</router-link></li>
+        <li><router-link to="/bar">Bar</router-link></li>
+      </ul>
     </article>
     <footer>
       <address>w-tokyodo</address>
@@ -14,11 +19,7 @@
 
 <script>
   export default {
-    data() {
-      return {
-        paragraph: 'This is article.'
-      }
-    }
+    //
   }
 </script>
 
