@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header>
-      <h1 class="title">Hello World!</h1>
-    </header>
+    <AppHeader></AppHeader>
     <article>
       <router-view></router-view>
       <ul>
@@ -11,20 +9,18 @@
         <li><router-link to="/bar">Bar</router-link></li>
       </ul>
     </article>
-    <footer>
-      <address>w-tokyodo</address>
-    </footer>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script>
+  import AppHeader from './components/app-header/app-header.vue';
+  import AppFooter from './components/app-footer/app-footer.vue';
+
   export default {
-    //
+    components: {
+      AppHeader,
+      AppFooter
+    }
   }
 </script>
-
-<style lang="scss" scoped>
-  .title {
-    @include text-red
-  }
-</style>
