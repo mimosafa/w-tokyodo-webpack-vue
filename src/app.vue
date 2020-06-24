@@ -25,6 +25,6 @@
 
 <style lang="scss" scoped>
   .title {
-    color: red;
+    @include text-red
   }
 </style>
