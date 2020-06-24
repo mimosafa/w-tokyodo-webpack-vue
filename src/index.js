@@ -1,9 +1,9 @@
 import './index.scss';
 import Vue from 'vue';
+import App from './app.vue';
 
-const app = new Vue({
+new Vue({
   el: '#app',
-  data: {
-    message: 'Hello World!'
-  }
+  components: { App },
+  template: '<App/>'
 });

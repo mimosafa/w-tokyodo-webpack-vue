@@ -4,6 +4,7 @@ const mode = process.env.NODE_ENV;
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   mode: mode,
@@ -14,6 +15,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
       {
         test: /\.scss$/,
         use: [
@@ -42,7 +47,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'style.css'
-    })
+    }),
+    new VueLoaderPlugin()
   ],
   devServer: {
     open: true,
