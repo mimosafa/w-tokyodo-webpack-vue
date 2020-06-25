@@ -1,10 +1,11 @@
 const path = require('path');
 const dist = path.resolve(__dirname, 'dist');
-const mode = process.env.NODE_ENV;
+const mode = (process.env.NODE_ENV === 'production') ? 'production' : 'development';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const Webpack = require('webpack');
 
 module.exports = {
   mode: mode,
@@ -68,7 +69,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'style.css'
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new Webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
   ],
   devServer: {
     open: true,

@@ -1,0 +1,7 @@
+@mixin global-container {
+  width: 100%;
+
+  @include desktop {
+    min-width: 1080px;
+  }
+}

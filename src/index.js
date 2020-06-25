@@ -14,6 +14,6 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   components: { Web },
-  template: '<Web/>',
+  template: '<web/>',
   router
 });
