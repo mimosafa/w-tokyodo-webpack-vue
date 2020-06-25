@@ -1,10 +1,12 @@
 #footer {
   @include global-container;
-  
-  background-size: cover;
-  background-image: url("./img/footer_bg.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 0;
+
+  background: {
+    size: cover;
+    image: url("./img/footer_bg.jpg");
+    repeat: no-repeat;
+    position: 50% 0;
+  }
 
   .footer_inner {
     margin: 0 auto;
@@ -131,9 +133,11 @@
           }
 
           > a {
-            background-image: url("./img/footer_sitemap_tokyodo_ttl.png");
-            background-repeat: no-repeat;
-            background-position: 0 0;
+            background: {
+              image: url("./img/footer_sitemap_tokyodo_ttl.png");
+              repeat: no-repeat;
+              position: 0 0;
+            }
 
             @include kick-out-text;
 
@@ -205,9 +209,11 @@
 
                 &:after {
                   content: "";
-                  background-repeat: no-repeat;
-                  background-position: 50% 50%;
-                  background-size: 18px auto;
+                  background: {
+                    repeat: no-repeat;
+                    position: 50% 50%;
+                    size: 18px auto;
+                  }
                   display: block;
                   width: 18px;
                   height: 18px;
@@ -279,15 +285,19 @@
 
               &:before,
               &:after {
-                background-image: url("./img/footer_sitemap_brand_sp.png");
-                background-size: auto 45px;
+                background: {
+                  image: url("./img/footer_sitemap_brand_sp.png");
+                  size: auto 45px;
+                }
               }
             }
             @include desktop {
               &:before,
               &:after {
-                background-image: url("./img/footer_sitemap_brand.png");
-                background-size: auto 160px;
+                background: {
+                  image: url("./img/footer_sitemap_brand.png");
+                  size: auto 160px;
+                }
               }
             }
           }
@@ -365,7 +375,7 @@
   // Credit
   //
   .footer_credit {
-    background-color: #000;
+    background-color: $black;
     text-align: center;
 
     @include phone {

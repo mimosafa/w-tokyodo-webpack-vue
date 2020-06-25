@@ -45,4 +45,4 @@ export default {
 };
 </script>
 
-<style src="./footer.scss" lang="scss" scoped />
+<style src="./footer.scss" lang="scss" scoped></style>

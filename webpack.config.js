@@ -37,6 +37,7 @@ module.exports = {
             loader: 'sass-resources-loader',
             options: {
               resources: [
+                path.resolve(__dirname, 'src/css/variable/_variable.scss'),
                 path.resolve(__dirname, 'src/css/core/mixin/_mixin.scss')
               ]
             }
