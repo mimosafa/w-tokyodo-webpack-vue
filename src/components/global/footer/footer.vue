@@ -30,13 +30,19 @@
     </div>
 
     <div class="footer_credit">
-      <p>Copyright &copy; 2010-2020 WorkStore Tokyo Do.<br>All Rights Reserved.</p>
+      <p>Copyright &copy; 2010-{{ current }} WorkStore Tokyo Do.<br>All Rights Reserved.</p>
     </div>
   </footer>
 </template>
 
 <script>
-
+export default {
+  computed: {
+    current() {
+      return (new Date()).getFullYear();
+    }
+  }
+};
 </script>
 
 <style src="./footer.scss" lang="scss" scoped />

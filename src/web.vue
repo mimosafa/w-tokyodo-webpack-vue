@@ -1,7 +1,7 @@
 <template>
-  <WebFrame>
+  <web-frame>
     <router-view></router-view>
-  </WebFrame>
+  </web-frame>
 </template>
 
 <script>

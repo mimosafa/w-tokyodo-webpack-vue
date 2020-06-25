@@ -3,6 +3,7 @@
     <global-header @init-header="initOverlay" @toggle-header-collapse="toggleOverlay" />
 
     <div class="header_overlay"></div>
+
     <div id="loader"></div>
 
     <div id="contents">
@@ -10,6 +11,7 @@
     </div>
 
     <global-footer />
+
     <global-page-top />
   </div>
 </template>
@@ -47,21 +49,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#header,
-#contents,
-#footer {
-  width: 100%;
-
-  @include desktop {
-    min-width: 1080px;
-  }
-}
 #contents {
-  @include phone {
-    padding: 48px 15px 55px;
-  }
-  @include desktop {
-    padding: 90px 40px 110px;
+  @include global-container;
+
+  > * {
+    @include phone {
+      padding: 48px 15px 55px;
+    }
+    @include desktop {
+      padding: 90px 40px 110px;
+    }
   }
 }
 

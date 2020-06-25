@@ -3,14 +3,16 @@ import media from '../../../js/media';
 const cls = 'active';
 const speed = 350;
 
-let header, toggle, brands, menus, others;
+let toggle, brands, menus, others;
 
 const initCollapse = () => {
-  header = document.getElementById('header');
-  toggle = header.querySelector('.header_gnav_btn a');
-  brands = header.querySelector('.header_gnav_brand');
-  menus  = header.querySelector('.header_gnav_menu');
-  others = header.querySelector('.header_gnav_other');
+  if (!toggle && !brands && !menus && !others) {
+    const header = document.getElementById('header');
+    toggle = header.querySelector('.header_gnav_btn a');
+    brands = header.querySelector('.header_gnav_brand');
+    menus  = header.querySelector('.header_gnav_menu');
+    others = header.querySelector('.header_gnav_other');
+  }
 
   media.init();
 
@@ -27,9 +29,6 @@ const initCollapse = () => {
 };
 
 export default {
-  data() {
-    return { speed };
-  },
   mounted() {
     this.initialize();
 
@@ -55,7 +54,7 @@ export default {
         $(others).slideToggle(speed);
       }
 
-      this.$emit('toggle-header-collapse', this.speed);
+      this.$emit('toggle-header-collapse', speed);
     }
   }
 }

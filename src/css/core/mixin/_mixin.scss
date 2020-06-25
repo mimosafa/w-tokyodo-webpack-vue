@@ -1,16 +1,5 @@
-// Media queries
-// - Phone
-@mixin phone {
-  @media (max-width: 896px) {
-    @content;
-  }
-}
-// - Desktop
-@mixin desktop {
-  @media (min-width: 897px) {
-    @content;
-  }
-}
+@import "media-query";
+@import "layout";
 
 // Kick out text
 @mixin kick-out-text {

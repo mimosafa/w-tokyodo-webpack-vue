@@ -1,4 +1,6 @@
 #header {
+  @include global-container;
+
   position: fixed;
   top: 0;
   z-index: 20000;
@@ -78,7 +80,6 @@
         z-index: 20000;
 
         @include phone {
-          // min-width: calc(100vw - 30px); // 要らない気がする
           width: calc(100vw - 30px);
           left: 15px;
         }
@@ -452,6 +453,7 @@
             display: block;
             position: relative;
             opacity: 1;
+            cursor: pointer;
 
             @include phone {
               width: 50px;

@@ -35,6 +35,7 @@ export default {
   display: none;
   position: fixed;
   z-index: 19999;
+  cursor: pointer;
 
   @include phone {
     right: 10px;

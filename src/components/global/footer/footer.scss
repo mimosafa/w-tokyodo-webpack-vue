@@ -1,4 +1,6 @@
 #footer {
+  @include global-container;
+  
   background-size: cover;
   background-image: url("./img/footer_bg.jpg");
   background-repeat: no-repeat;
