@@ -15,7 +15,7 @@
           <dd>
             <p>〒146-0094 東京都大田区東矢口三丁目30番14号</p>
             <ul class="footer_sitemap_tokyodo_links">
-              <li class="footer_sitemap_tokyodo_links_tel"><w-tokyodo-a href="tel:03-3737-3000">03-3737-3000</w-tokyodo-a></li>
+              <li class="footer_sitemap_tokyodo_links_tel"><a href="tel:03-3737-3000">03-3737-3000</a></li>
               <li class="footer_sitemap_tokyodo_links_mail"><w-tokyodo-a href="/contact">お問い合わせ</w-tokyodo-a></li>
             </ul>
           </dd>
