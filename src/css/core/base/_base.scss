@@ -9,7 +9,7 @@ body {
   height: 100%;
 }
 body {
-  background-color: #fff;
+  background-color: $_color-base;
 }
 
 // Font
@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
-  color: #333;
+  font-family: $_font-family;
+  color: $_font-color-primary;
   font-weight: 400;
   letter-spacing: .02em;
 
@@ -101,7 +101,7 @@ h6 {
 // Links
 a {
   display: inline-block;
-  color: #333;
+  color: $_font-color-primary;
   text-decoration: none;
 
   @include desktop {

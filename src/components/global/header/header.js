@@ -6,7 +6,7 @@ const speed = 350;
 let toggle, brands, menus, others;
 
 const initCollapse = () => {
-  if (!toggle && !brands && !menus && !others) {
+  if (!toggle || !brands || !menus || !others) {
     const header = document.getElementById('header');
     toggle = header.querySelector('.header_gnav_btn a');
     brands = header.querySelector('.header_gnav_brand');
@@ -28,7 +28,12 @@ const initCollapse = () => {
   }
 };
 
+import WTokyodoA from '../w-tokyodo-anchor.vue';
+
 export default {
+  components: {
+    WTokyodoA
+  },
   mounted() {
     this.initialize();
 

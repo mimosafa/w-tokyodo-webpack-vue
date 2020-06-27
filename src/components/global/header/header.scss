@@ -32,9 +32,11 @@
 
       a {
         display: block;
-        background-image: url("./img/header_site_ttl.png");
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
+        background: {
+          image: url("./img/header_site_ttl.png");
+          repeat: no-repeat;
+          position: 50% 50%;
+        }
 
         @include kick-out-text;
 
@@ -59,7 +61,7 @@
     // Global navigation
     //
     .header_gnav {
-      background-color: #fff;
+      background-color: $_color-base;
       position: relative;
       z-index: 19999;
 
@@ -104,7 +106,7 @@
         // Brands
         //
         .header_gnav_brand {
-          //display: none;
+          display: none;
           border-top: 1px solid #d9d9d9;
           position: relative;
           letter-spacing: -.4em;
@@ -260,7 +262,7 @@
         // Global menu
         //
         .header_gnav_menu {
-          //display: none;
+          display: none;
           border-top: 1px solid #d9d9d9;
           position: relative;
           letter-spacing: -.4em;
@@ -339,7 +341,7 @@
 
                 &:after {
                   content: "";
-                  background-color: #333;
+                  background-color: $_font-color-primary;
                   background-image: url("./img/icon_arrow.png");
                   background-repeat: no-repeat;
                   background-position: 50% 50%;
@@ -379,7 +381,7 @@
           letter-spacing: -.4em;
 
           @include phone {
-            //display: none;
+            display: none;
             padding-bottom: 25px;
             margin-left: -20px;
             position: static;
@@ -415,9 +417,11 @@
                 opacity: 1;
               }
 
-              background-image: url("./img/header_gnav_other.png");
-              background-repeat: no-repeat;
-              background-size: auto 35px;
+              background: {
+                image: url("./img/header_gnav_other.png");
+                repeat: no-repeat;
+                size: auto 35px;
+              }
 
               @include kick-out-text;
             }
@@ -483,7 +487,7 @@
             }
 
             .header_gnav_btn_bar {
-              background-color: #000;
+              background-color: $black;
               display: inline-block;
               position: absolute;
               transition: .15s ease-in-out;

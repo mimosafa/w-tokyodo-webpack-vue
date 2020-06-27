@@ -48,11 +48,13 @@ export default {
 
   a {
     display: block;
-    border: 1px solid #fff;
-    background-color: rgba(0, 0, 0, .8);
-    background-image: url("./img/pagetop.png");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    border: 1px solid $white;
+    background: {
+      color: rgba($black, .8);
+      image: url("./img/pagetop.png");
+      repeat: no-repeat;
+      position: 50% 50%;
+    }
 
     @include kick-out-text;
 
