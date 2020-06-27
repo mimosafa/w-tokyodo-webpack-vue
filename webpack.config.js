@@ -12,7 +12,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: dist
+    path: dist,
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -79,6 +80,7 @@ module.exports = {
   devServer: {
     open: true,
     contentBase: dist,
-    watchContentBase: true
+    watchContentBase: true,
+    historyApiFallback: true
   }
 };
