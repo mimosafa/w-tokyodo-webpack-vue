@@ -74,6 +74,7 @@ module.exports = {
   devServer: {
     open: true,
     contentBase: dist,
-    watchContentBase: true
+    watchContentBase: true,
+    historyApiFallback: true
   }
 };
