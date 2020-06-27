@@ -28,7 +28,12 @@ const initCollapse = () => {
   }
 };
 
+import WTokyodoA from '../w-tokyodo-anchor.vue';
+
 export default {
+  components: {
+    WTokyodoA
+  },
   mounted() {
     this.initialize();
 
