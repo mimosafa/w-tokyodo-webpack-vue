@@ -11,7 +11,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: dist
+    path: dist,
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -36,7 +37,7 @@ module.exports = {
             loader: 'sass-resources-loader',
             options: {
               resources: [
-                path.resolve(__dirname, 'src/css/core/variable/_color.scss'),
+                path.resolve(__dirname, 'src/css/core/variable/_variable.scss'),
                 path.resolve(__dirname, 'src/css/core/mixin/_mixin.scss')
               ]
             }
