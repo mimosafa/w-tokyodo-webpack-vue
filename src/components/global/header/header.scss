@@ -462,10 +462,9 @@
             @include phone {
               width: 50px;
               height: 48px;
-            }
-            @include desktop {
-              width: 35px;
-              height: 25px;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
             }
 
             .header_gnav_btn_ttl {
@@ -483,73 +482,6 @@
                 font-size: 16px;
                 line-height: 25px;
                 letter-spacing: .04em;
-              }
-            }
-
-            .header_gnav_btn_bar {
-              background-color: $black;
-              display: inline-block;
-              position: absolute;
-              transition: .15s ease-in-out;
-
-              @include phone {
-                width: 20px;
-                height: 2px;
-                right: 15px;
-              }
-              @include desktop {
-                width: 35px;
-                height: 3px;
-                right: 0;
-              }
-            }
-
-            #header_gnav_btn_bar01 {
-              @include phone {
-                top: 16px;
-              }
-              @include desktop {
-                top: 0;
-              }
-            }
-            #header_gnav_btn_bar02 {
-              @include phone {
-                top: 23px;
-              }
-              @include desktop {
-                top: 11px;
-              }
-            }
-            #header_gnav_btn_bar03 {
-              @include phone {
-                top: 30px;
-              }
-              @include desktop {
-                top: 22px;
-              }
-            }
-
-            &.active {
-              #header_gnav_btn_bar01 {
-                transform: rotate(45deg);
-                @include phone {
-                  top: 23px;
-                }
-                @include desktop {
-                  top: 13px;
-                }
-              }
-              #header_gnav_btn_bar02 {
-                width: 0;
-              }
-              #header_gnav_btn_bar03 {
-                transform: rotate(-45deg);
-                @include phone {
-                  top: 23px;
-                }
-                @include desktop {
-                  top: 13px;
-                }
               }
             }
           }

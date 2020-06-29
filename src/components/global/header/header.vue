@@ -23,9 +23,7 @@
           <div class="header_gnav_btn">
             <a @click="toggleCollapse">
               <span class="header_gnav_btn_ttl">Menu</span>
-              <span id="header_gnav_btn_bar01" class="header_gnav_btn_bar"></span>
-              <span id="header_gnav_btn_bar02" class="header_gnav_btn_bar"></span>
-              <span id="header_gnav_btn_bar03" class="header_gnav_btn_bar"></span>
+              <hamburger-toggle ref="toggle" />
             </a>
           </div>
         </div>

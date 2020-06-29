@@ -1,62 +1,58 @@
 import media from '../../../js/media';
-
-const cls = 'active';
-const speed = 350;
-
-let toggle, brands, menus, others;
-
-const initCollapse = () => {
-  if (!toggle || !brands || !menus || !others) {
-    const header = document.getElementById('header');
-    toggle = header.querySelector('.header_gnav_btn a');
-    brands = header.querySelector('.header_gnav_brand');
-    menus  = header.querySelector('.header_gnav_menu');
-    others = header.querySelector('.header_gnav_other');
-  }
-
-  media.init();
-
-  toggle.classList.remove(cls);
-  brands.style.display = 'none';
-  menus.style.display = 'none';
-
-  if (media.isPhone()) {
-    others.style.display = 'none';
-  }
-  else if (media.isDesktop()) {
-    others.style.display = '';
-  }
-};
-
 import WTokyodoA from '../w-tokyodo-anchor.vue';
+import HamburgerToggle from '../../ui/nav/hamburger-toggle.vue';
+
+const speed = 350;
 
 export default {
   components: {
-    WTokyodoA
+    WTokyodoA,
+    HamburgerToggle
+  },
+  data() {
+    return {
+      brands: null,
+      menus: null,
+      others: null
+    }
   },
   mounted() {
-    this.initialize();
+    this.brands = this.$el.querySelector('.header_gnav_brand');
+    this.menus  = this.$el.querySelector('.header_gnav_menu');
+    this.others = this.$el.querySelector('.header_gnav_other');
+
+    this.init();
 
     let resizeTimer = 0;
     window.addEventListener('resize', () => {
       if (resizeTimer) {
         clearTimeout(resizeTimer);
       }
-      resizeTimer = setTimeout(this.initialize, 200);
+      resizeTimer = setTimeout(this.init, 200);
     });
   },
   methods: {
-    initialize() {
-      initCollapse();
+    init() {
+      media.init();
+      this.$refs.toggle.init();
+      this.brands.style.display = 'none';
+      this.menus.style.display = 'none';
+
+      if (media.isPhone()) {
+        this.others.style.display = 'none';
+      }
+      else if (media.isDesktop()) {
+        this.others.style.display = '';
+      }
       this.$emit('init-header');
     },
     toggleCollapse() {
-      toggle.classList.toggle(cls);
-      $(brands).slideToggle(speed);
-      $(menus).slideToggle(speed);
+      this.$refs.toggle.toggle();
+      $(this.brands).slideToggle(speed);
+      $(this.menus).slideToggle(speed);
 
       if (media.isPhone()) {
-        $(others).slideToggle(speed);
+        $(this.others).slideToggle(speed);
       }
 
       this.$emit('toggle-header-collapse', speed);
