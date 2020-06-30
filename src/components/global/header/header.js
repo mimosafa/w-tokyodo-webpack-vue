@@ -1,6 +1,7 @@
-import media from '../../../js/media';
 import WTokyodoA from '../w-tokyodo-anchor.vue';
 import HamburgerToggle from '../../ui/nav/hamburger-toggle.vue';
+import media from '@js/media';
+import onResize from '@js/onresize';
 
 const speed = 350;
 
@@ -21,14 +22,7 @@ export default {
     this.others = this.$el.querySelector('.header_gnav_other');
 
     this.init();
-
-    let resizeTimer = 0;
-    window.addEventListener('resize', () => {
-      if (resizeTimer) {
-        clearTimeout(resizeTimer);
-      }
-      resizeTimer = setTimeout(this.init, 200);
-    });
+    onResize(this.init);
 
     window.addEventListener('scroll', this.handleScroll);
   },
