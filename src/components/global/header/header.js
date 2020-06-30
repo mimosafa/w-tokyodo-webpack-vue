@@ -11,9 +11,8 @@ export default {
   },
   data() {
     return {
-      brands: null,
-      menus: null,
-      others: null
+      isActive: false,
+      pageYOffset: 0
     }
   },
   mounted() {
@@ -30,10 +29,13 @@ export default {
       }
       resizeTimer = setTimeout(this.init, 200);
     });
+
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     init() {
       media.init();
+
       this.$refs.toggle.init();
       this.brands.style.display = 'none';
       this.menus.style.display = 'none';
@@ -44,10 +46,17 @@ export default {
       else if (media.isDesktop()) {
         this.others.style.display = '';
       }
+
+      this.isActive = false;
+
       this.$emit('init-header');
     },
-    toggleCollapse() {
+    handleCollapse() {
+      window.removeEventListener('scroll', this.handleScroll);
+
+      // HamburgerToggle
       this.$refs.toggle.toggle();
+
       $(this.brands).slideToggle(speed);
       $(this.menus).slideToggle(speed);
 
@@ -55,7 +64,26 @@ export default {
         $(this.others).slideToggle(speed);
       }
 
+      this.isActive = !this.isActive;
+
+      if (!this.isActive) {
+        window.addEventListener('scroll', this.handleScroll);
+      }
+
       this.$emit('toggle-header-collapse', speed);
+    },
+    handleScroll() {
+      const oldPageYOffset = this.pageYOffset;
+      this.pageYOffset = window.pageYOffset;
+
+      if ((oldPageYOffset < this.pageYOffset) && (this.pageYOffset > 90)) {
+        // Scroll down
+        this.$el.classList.add('hidden');
+      }
+      else {
+        // Scroll up
+        this.$el.classList.remove('hidden');
+      }
     }
   }
 }

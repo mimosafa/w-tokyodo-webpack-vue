@@ -21,7 +21,7 @@
             <li class="header_gnav_other_contact"><w-tokyodo-a href="/contact/">お問い合わせ</w-tokyodo-a></li>
           </ul>
           <div class="header_gnav_btn">
-            <a @click="toggleCollapse">
+            <a @click="handleCollapse">
               <span class="header_gnav_btn_ttl">Menu</span>
               <hamburger-toggle ref="toggle" />
             </a>
