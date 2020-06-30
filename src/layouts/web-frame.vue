@@ -54,7 +54,7 @@ export default {
       $(this.overlay).fadeToggle(speed);
     },
     closeHeaderCollapse() {
-      this.$refs.globalHeader.toggleCollapse();
+      this.$refs.globalHeader.handleCollapse();
     }
   }
 };

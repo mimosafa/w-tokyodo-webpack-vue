@@ -1,65 +1,89 @@
 import media from '../../../js/media';
-
-const cls = 'active';
-const speed = 350;
-
-let toggle, brands, menus, others;
-
-const initCollapse = () => {
-  if (!toggle || !brands || !menus || !others) {
-    const header = document.getElementById('header');
-    toggle = header.querySelector('.header_gnav_btn a');
-    brands = header.querySelector('.header_gnav_brand');
-    menus  = header.querySelector('.header_gnav_menu');
-    others = header.querySelector('.header_gnav_other');
-  }
-
-  media.init();
-
-  toggle.classList.remove(cls);
-  brands.style.display = 'none';
-  menus.style.display = 'none';
-
-  if (media.isPhone()) {
-    others.style.display = 'none';
-  }
-  else if (media.isDesktop()) {
-    others.style.display = '';
-  }
-};
-
 import WTokyodoA from '../w-tokyodo-anchor.vue';
+import HamburgerToggle from '../../ui/nav/hamburger-toggle.vue';
+
+const speed = 350;
 
 export default {
   components: {
-    WTokyodoA
+    WTokyodoA,
+    HamburgerToggle
+  },
+  data() {
+    return {
+      isActive: false,
+      pageYOffset: 0
+    }
   },
   mounted() {
-    this.initialize();
+    this.brands = this.$el.querySelector('.header_gnav_brand');
+    this.menus  = this.$el.querySelector('.header_gnav_menu');
+    this.others = this.$el.querySelector('.header_gnav_other');
+
+    this.init();
 
     let resizeTimer = 0;
     window.addEventListener('resize', () => {
       if (resizeTimer) {
         clearTimeout(resizeTimer);
       }
-      resizeTimer = setTimeout(this.initialize, 200);
+      resizeTimer = setTimeout(this.init, 200);
     });
+
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
-    initialize() {
-      initCollapse();
-      this.$emit('init-header');
-    },
-    toggleCollapse() {
-      toggle.classList.toggle(cls);
-      $(brands).slideToggle(speed);
-      $(menus).slideToggle(speed);
+    init() {
+      media.init();
+
+      this.$refs.toggle.init();
+      this.brands.style.display = 'none';
+      this.menus.style.display = 'none';
 
       if (media.isPhone()) {
-        $(others).slideToggle(speed);
+        this.others.style.display = 'none';
+      }
+      else if (media.isDesktop()) {
+        this.others.style.display = '';
+      }
+
+      this.isActive = false;
+
+      this.$emit('init-header');
+    },
+    handleCollapse() {
+      window.removeEventListener('scroll', this.handleScroll);
+
+      // HamburgerToggle
+      this.$refs.toggle.toggle();
+
+      $(this.brands).slideToggle(speed);
+      $(this.menus).slideToggle(speed);
+
+      if (media.isPhone()) {
+        $(this.others).slideToggle(speed);
+      }
+
+      this.isActive = !this.isActive;
+
+      if (!this.isActive) {
+        window.addEventListener('scroll', this.handleScroll);
       }
 
       this.$emit('toggle-header-collapse', speed);
+    },
+    handleScroll() {
+      const oldPageYOffset = this.pageYOffset;
+      this.pageYOffset = window.pageYOffset;
+
+      if ((oldPageYOffset < this.pageYOffset) && (this.pageYOffset > 90)) {
+        // Scroll down
+        this.$el.classList.add('hidden');
+      }
+      else {
+        // Scroll up
+        this.$el.classList.remove('hidden');
+      }
     }
   }
 }
