@@ -2470,6 +2470,11 @@ findup-sync@^3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
+flexbox-grid-mixins@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/flexbox-grid-mixins/-/flexbox-grid-mixins-0.2.1.tgz#a0901d58081579d54a55501fea5238e25f9513b1"
+  integrity sha512-GBxF81MY/s3ZV78laky8rb1ULV7l81KEbRwTiv44vPdVZKRto7bslYJKzh469d2YSCHh8+0GBzAi7T5h32IqHw==
+
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
