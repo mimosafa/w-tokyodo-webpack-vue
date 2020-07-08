@@ -1,0 +1,65 @@
+.quote-lead {
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 3.5rem;
+    text-align: center;
+  }
+
+  dl.quote-result {
+    @include grid($flex-wrap: wrap);
+    text-align: center;
+
+    dt,
+    dd {
+      border: {
+        bottom: solid 1px #666;
+      }
+      margin-bottom: .825rem;
+    }
+
+    dt {
+      font-weight: 600;
+    }
+
+    @include phone {
+      width: 100%;
+    }
+    @include desktop {
+      width: 475px;
+    }
+
+    dt {
+      @include grid-col($col: 1, $grid-columns: 4);
+    }
+    .quote-result-label {
+      @include grid-col($col: 2, $grid-columns: 4);
+    }
+    .quote-result-price {
+      @include grid-col($col: 1, $grid-columns: 4);
+    }
+  }
+}
+
+@include phone {
+  .quote-lead {
+    //
+  }
+}
+
+@include desktop {
+  .quote-lead {
+    width: 50%;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 90px);
+  }
+
+  .quote-wrapper {
+    width: 50%;
+    margin-left: 50%;
+  }
+}

@@ -66,10 +66,12 @@ export default {
 
   > * {
     @include phone {
-      padding: 48px 15px 55px;
+      //padding: 48px 15px 55px;
+      padding-top: 48px;
     }
     @include desktop {
-      padding: 90px 40px 110px;
+      //padding: 90px 40px 110px;
+      padding-top: 90px;
     }
   }
 }

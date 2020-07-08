@@ -1,0 +1,31 @@
+.quote-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  &:first-child,
+  &:last-child {
+    min-height: calc(100vh - 90px);
+  }
+
+  fieldset {
+    margin-bottom: 1rem;
+  }
+}
+
+.quote-section-question {
+  font-size: 1.75rem;
+  margin-bottom: .5rem;
+  text-align: left;
+
+  &:before {
+    content: "Q";
+    font-size: 3.75rem;
+    display: inline-block;
+    width: 4rem;
+    margin-left: -3rem;
+  }
+}
