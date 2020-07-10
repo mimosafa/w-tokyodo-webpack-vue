@@ -62,6 +62,14 @@ const store = {
       return this.prefectures[this.state.prefecture];
     }
     return null;
+  },
+
+  setPeriodStart(date) {
+    this.period.start = new Date(date);
+  },
+
+  setPeriodEnd(date) {
+    //
   }
 };
 
