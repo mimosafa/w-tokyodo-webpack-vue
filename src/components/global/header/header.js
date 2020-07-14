@@ -1,5 +1,5 @@
 import WTokyodoA from '../w-tokyodo-anchor.vue';
-import HamburgerToggle from '../../ui/nav/hamburger-toggle.vue';
+import HamburgerToggle from '@ui/nav/hamburger-toggle.vue';
 import media from '@js/media';
 import onResize from '@js/onresize';
 
