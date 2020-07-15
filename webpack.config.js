@@ -12,7 +12,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: dist
+    path: dist,
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -51,7 +52,8 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 1024 * 10,
-              name: 'img/[name].[ext]'
+              name: 'img/[name].[ext]',
+              esModule: false
             }
           }
         ]
@@ -60,7 +62,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@js': path.resolve(__dirname, 'src/js'),
+      '@ui': path.resolve(__dirname, 'src/components/ui')
     }
   },
   plugins: [
@@ -79,6 +83,7 @@ module.exports = {
   devServer: {
     open: true,
     contentBase: dist,
-    watchContentBase: true
+    watchContentBase: true,
+    historyApiFallback: true
   }
 };

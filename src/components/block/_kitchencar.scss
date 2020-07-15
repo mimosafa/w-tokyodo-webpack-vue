@@ -1,0 +1,191 @@
+.kitchencar-block {
+  display: block;
+  text-decoration: none;
+  transition: .2s ease-out;
+  cursor: pointer;
+
+  &-title {
+    line-height: 0; // hack
+
+    @include phone {
+      margin-bottom: 10px;
+    }
+    @include desktop {
+      margin-bottom: 15px;
+    }
+
+    span {
+      line-height: 1.7; // hack
+      display: inline-block;
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+
+  &-contents {
+    @include clearfix;
+  }
+
+  &-images {
+    display: block;
+    float: left;
+    position: relative;
+
+    @include phone {
+      width: 44.83%;
+    }
+    @include desktop {
+      width: 46.81%;
+    }
+
+    > span {
+      display: block;
+      overflow: hidden;
+
+      &.car-image {
+        width: 100%;
+        padding-top: 75%;
+        position: relative;
+      }
+
+      &.menu-image {
+        background-size: 50% auto; // noimg.png
+        overflow: hidden;
+        position: absolute;
+        border: {
+          style: solid;
+          color: $white;
+          radius: 1000px;
+        }
+        z-index: 1;
+        box-sizing: content-box;
+
+        @include phone {
+          width: 46.14%;
+          padding-top: 46.14%;
+          border-width: 3px;
+          right: -9px;
+          bottom: -10px;
+        }
+        @include desktop {
+          width: 45.45%;
+          padding-top: 45.45%;
+          border-width: 6px;
+          right: -20px;
+          bottom: -24px;
+        }
+      }
+
+      img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &-texts {
+    float: right;
+
+    @include phone {
+      width: 50%;
+    }
+    @include desktop {
+      width: 46.81%;
+    }
+
+    > div {
+      width: 100%;
+      padding-top: 75%;
+      overflow: hidden;
+      position: relative;
+
+      &:after {
+        content: "";
+        background: {
+          image: url("./img/mask_archive_lists_txt.png");
+          repeat: repeat-x;
+          size: auto 100%;
+        }
+        display: block;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+
+        @include phone {
+          height: 20px;
+        }
+        @include desktop {
+          height: 40px;
+        }
+      }
+
+      p {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.kitchencar-detail {
+  @include phone {
+    padding: 5px;
+  }
+  @include desktop {
+    padding: 20px;
+    width: 960px;
+  }
+
+  h4 {
+    @include phone {
+      font-size: 1.6rem;
+      padding-bottom: 10px;
+    }
+    @include desktop {
+      font-size: 2.4rem;
+      padding-bottom: 20px;
+    }
+  }
+
+  &-images {
+    @include phone {
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+    @include desktop {
+      @include grid();
+    }
+  }
+
+  &-image {
+    width: 100%;
+
+    @include phone {
+      margin-top: 10px;
+    }
+    @include desktop {
+      @include grid-col($col: 1, $grid-columns: 2, $gutter: 20px)
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      padding-top: 75%;
+
+      &.has-image {
+        background: {
+          size: cover;
+          position: 50% 50%;
+          repeat: no-repeat;
+        }
+      }
+    }
+  }
+}

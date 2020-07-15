@@ -1,0 +1,9 @@
+.noimg {
+  background: {
+    color: #f2f2f2;
+    image: url("img/noimg.png"); // ~/src/img/noimg.png
+    repeat: no-repeat;
+    position: 50% 50%;
+    size: 35% auto;
+  }
+}
