@@ -345,6 +345,7 @@
 //
 .other-links {
   letter-spacing: -.4em;
+  white-space: pre-line;
 
   @include phone {
     display: none;
