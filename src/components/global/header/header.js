@@ -1,4 +1,5 @@
 import WTokyodoA from '../w-tokyodo-anchor.vue';
+import LinkArrow from '@ui/link/link-arrow.vue';
 import HamburgerToggle from '@ui/nav/hamburger-toggle.vue';
 import media from '@js/media';
 import onResize from '@js/onresize';
@@ -8,6 +9,7 @@ const speed = 350;
 export default {
   components: {
     WTokyodoA,
+    LinkArrow,
     HamburgerToggle
   },
   data() {
@@ -17,9 +19,9 @@ export default {
     }
   },
   mounted() {
-    this.brands = this.$el.querySelector('.header_gnav_brand');
-    this.menus  = this.$el.querySelector('.header_gnav_menu');
-    this.others = this.$el.querySelector('.header_gnav_other');
+    this.brands = this.$el.querySelector('.site-brands');
+    this.menus  = this.$el.querySelector('.global-menu');
+    this.others = this.$el.querySelector('.other-links');
 
     this.init();
     onResize(this.init);
