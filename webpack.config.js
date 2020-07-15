@@ -39,7 +39,7 @@ module.exports = {
             options: {
               resources: [
                 path.resolve(__dirname, 'src/css/variable/_variable.scss'),
-                path.resolve(__dirname, 'src/css/core/mixin/_mixin.scss')
+                path.resolve(__dirname, 'src/css/mixin/_mixin.scss')
               ]
             }
           }
