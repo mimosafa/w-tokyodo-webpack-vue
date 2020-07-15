@@ -299,14 +299,14 @@
     }
 
     @include phone {
-      @include grid-col($col: 1, $grid-columns: 2, $height: 45px);
+      @include grid-col($col: 1, $grid-columns: 2, $height: 45px, $min-width: 50%);
 
       &:nth-child(2n) {
         border-right: none;
       }
     }
     @include desktop {
-      @include grid-col($col: 1, $grid-columns: 3, $height: 80px);
+      @include grid-col($col: 1, $grid-columns: 3, $height: 80px, $min-width: 33%);
 
       &:nth-child(3n) {
         border-right: none;
