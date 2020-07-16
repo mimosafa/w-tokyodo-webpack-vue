@@ -40,7 +40,7 @@ export default {
   transition: opacity .15s;
 }
 .modal-leave-active {
-  transition: opacity .35s
+  transition: opacity .35s;
 }
 .modal-enter,
 .modal-leave-to {

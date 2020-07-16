@@ -19,10 +19,10 @@ span {
   position: relative;
 
   @include phone {
-    padding-left: 20px;
+    padding-left: 2rem;
   }
   @include desktop {
-    padding-left: 30px;
+    padding-left: 3rem;
   }
 
   &:before {
@@ -33,22 +33,22 @@ span {
     }
     display: block;
     position: absolute;
-    top: .3em;
+    top: .6rem;
     left: 0;
     background-image: url("./img/icon_arrow.png");
     background-color: #333;
 
     @include phone {
-      background-size: 13px auto;
-      width: 13px;
-      height: 13px;
-      border-radius: 13px;
+      background-size: 1.3rem auto;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 1.3rem;
     }
     @include desktop {
-      background-size: 18px auto;
-      width: 18px;
-      height: 18px;
-      border-radius: 18px;
+      background-size: 1.8rem auto;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 1.8rem;
     }
   }
 
