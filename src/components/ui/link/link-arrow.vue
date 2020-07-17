@@ -33,10 +33,16 @@ span {
     }
     display: block;
     position: absolute;
-    top: .6rem;
     left: 0;
     background-image: url("./img/icon_arrow.png");
     background-color: #333;
+
+    @include phone {
+      top: calc(50% - .65rem);
+    }
+    @include desktop {
+      top: calc(50% - .9rem);
+    }
 
     @include phone {
       background-size: 1.3rem auto;
